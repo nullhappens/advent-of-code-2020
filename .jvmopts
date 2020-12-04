@@ -1,0 +1,10 @@
+-XX:MaxMetaspaceSize=1g
+-Xss2m
+-Xms1g
+-Xmx3g
+-XX:ReservedCodeCacheSize=256m
+-XX:+CMSClassUnloadingEnabled
+-Dfile.encoding=UTF8
+-XX:+UseG1GC
+-XX:+UseStringDeduplication
+-XX:MaxInlineLevel=20

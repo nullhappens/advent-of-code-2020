@@ -1,0 +1,8 @@
+target/
+.idea/
+.DS_Store
+docker/image/lib
+.metals/
+.bloop
+project/**/metals.sbt
+.bsp/
