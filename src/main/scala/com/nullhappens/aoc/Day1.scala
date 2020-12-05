@@ -7,6 +7,7 @@ import fs2.text
 import io.chrisdavenport.log4cats.Logger
 import io.chrisdavenport.log4cats.slf4j.Slf4jLogger
 import cats.Applicative
+import cats.effect.Console.implicits._
 
 object Main extends IOApp {
   implicit def unsafeLogger = Slf4jLogger.getLogger[IO]
@@ -15,28 +16,29 @@ object Main extends IOApp {
     Blocker[IO].use { blocker =>
       for {
         lines <- loadSolutionFile[IO]("/day1.txt", blocker).compile.toList
-        _ <- findSolution[IO](lines)
+        intList <- IO(transform(lines))
+        _ <- solutionPart1[IO](intList)
       } yield (ExitCode.Success)
     }
   }
 
-  def findSolution[F[_]: Applicative: Logger](lst: List[String]): F[Unit] = {
-    val intList =
-      lst.map(s => Either.catchNonFatal(Integer.parseInt(s)).toOption).flatten
+  def transform(lst: List[String]): List[Int] =
+    lst.map(s => Either.catchNonFatal(Integer.parseInt(s)).toOption).flatten
 
-    intList.zipWithIndex.traverse_ {
+  def solutionPart1[F[_]: Applicative: Logger: Console](
+      lst: List[Int]
+    ): F[Unit] =
+    lst.zipWithIndex.traverse_ {
       case (x, i) =>
-        intList
+        lst
           .drop(i + 1)
           .find(y => x + y == 2020)
           .fold(Applicative[F].unit)(y =>
-            Logger[F]
-              .debug(
-                s"found matches for $x and $y, thus the answer is ${x * y}"
-              )
+            Console[F].putStrLn(
+              s"PART 1: found matches for $x and $y, thus the answer is ${x * y}"
+            )
           )
     }
-  }
 
   def loadSolutionFile[F[_]: Sync: ContextShift](
       fileName: String,
