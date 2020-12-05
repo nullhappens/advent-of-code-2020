@@ -18,8 +18,9 @@ object LibraryDependencies {
   }
 
   object Fs2 {
-    private val fs2Version = "2.2.2"
+    private val fs2Version = "2.4.6"
     val core = "co.fs2" %% "fs2-core" % fs2Version
+    val io = "co.fs2" %% "fs2-io" % "2.4.6"
   }
 
   object Circe {

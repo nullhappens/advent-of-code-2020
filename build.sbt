@@ -27,5 +27,6 @@ lazy val root = project
       Cats.core,
       Cats.effect,
       Fs2.core,
+      Fs2.io
     )
   )
