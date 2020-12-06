@@ -18,6 +18,7 @@ object Utilities {
       true
     ).through(text.utf8Decode)
       .through(text.lines)
+      .filterNot(_.trim().isEmpty())
 
   def parseInt(s: String): Option[Int] =
     Either.catchNonFatal(Integer.parseInt(s)).toOption
