@@ -37,6 +37,7 @@ object Day3 extends IOApp {
         start <- Timer[IO].clock.realTime(TimeUnit.MILLISECONDS)
         lines <- Utilities
           .loadSolutionFile[IO]("/day3.txt", blocker)
+          .filterNot(_.trim().isEmpty())
           .compile
           .toList
         matrix <- IO(transform(lines))
