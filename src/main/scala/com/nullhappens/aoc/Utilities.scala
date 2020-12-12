@@ -2,8 +2,8 @@ package com.nullhappens.aoc
 
 import cats.effect._
 import cats.implicits._
-import fs2.text
 import fs2.io._
+import fs2.text
 
 object Utilities {
 

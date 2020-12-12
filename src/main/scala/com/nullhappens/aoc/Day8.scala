@@ -1,13 +1,13 @@
 package com.nullhappens.aoc
 
+import java.util.concurrent.TimeUnit
+
+import cats.Show
+import cats.effect.Console.implicits._
 import cats.effect._
 import cats.implicits._
-import cats.effect.Console.implicits._
-import java.util.concurrent.TimeUnit
-import cats.Show
-import com.nullhappens.aoc.Day8.Command.Nop
-import com.nullhappens.aoc.Day8.Command.Acc
-import com.nullhappens.aoc.Day8.Command.Jmp
+
+import com.nullhappens.aoc.Day8.Command.{Acc, Jmp, Nop}
 
 object Day8 extends IOApp {
 

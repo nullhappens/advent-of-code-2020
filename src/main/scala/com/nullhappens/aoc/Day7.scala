@@ -1,10 +1,10 @@
 package com.nullhappens.aoc
 
+import scala.collection.immutable.Nil
+
+import cats.Show
 import cats.effect._
 import cats.implicits._
-// import cats.effect.Console.implicits._
-import cats.Show
-import scala.collection.immutable.Nil
 
 object Day7 extends IOApp {
 

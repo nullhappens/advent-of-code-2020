@@ -1,10 +1,12 @@
 package com.nullhappens.aoc
 
+import java.util.concurrent.TimeUnit
+
+import scala.collection.immutable.Nil
+
+import cats.effect.Console.implicits._
 import cats.effect._
 import cats.implicits._
-import cats.effect.Console.implicits._
-import java.util.concurrent.TimeUnit
-import scala.collection.immutable.Nil
 
 object Day4 extends IOApp {
 

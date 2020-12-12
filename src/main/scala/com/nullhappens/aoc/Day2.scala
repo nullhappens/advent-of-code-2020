@@ -1,10 +1,11 @@
 package com.nullhappens.aoc
 
-import cats.effect._
-import cats.implicits._
-import cats.effect.Console.implicits._
 import scala.collection.immutable.Nil
 import scala.util.Try
+
+import cats.effect.Console.implicits._
+import cats.effect._
+import cats.implicits._
 
 object Day2 extends IOApp {
 

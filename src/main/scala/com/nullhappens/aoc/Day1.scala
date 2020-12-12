@@ -1,9 +1,9 @@
 package com.nullhappens.aoc
 
-import cats.effect._
-import cats.implicits._
 import cats.Applicative
 import cats.effect.Console.implicits._
+import cats.effect._
+import cats.implicits._
 
 object Day1 extends IOApp {
 

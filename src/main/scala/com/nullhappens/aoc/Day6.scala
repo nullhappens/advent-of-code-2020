@@ -1,9 +1,10 @@
 package com.nullhappens.aoc
 
+import java.util.concurrent.TimeUnit
+
+import cats.effect.Console.implicits._
 import cats.effect._
 import cats.implicits._
-import cats.effect.Console.implicits._
-import java.util.concurrent.TimeUnit
 
 object Day6 extends IOApp {
 
