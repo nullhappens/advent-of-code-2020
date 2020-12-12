@@ -6,7 +6,7 @@ ThisBuild / scalafixDependencies += scalafixOrganizeImports
 lazy val root = project
   .in(file("."))
   .settings(
-    scalaVersion := "2.13.3",
+    scalaVersion := "2.13.4",
     scalacOptions += "-Ymacro-annotations",
     organization := "com.nullhappens",
     name := "advent-of-code-2020",

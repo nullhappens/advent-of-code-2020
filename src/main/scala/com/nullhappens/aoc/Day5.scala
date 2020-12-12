@@ -37,7 +37,6 @@ object Day5 extends IOApp {
 
     def rangeIterate(currentRange: Range, lst: List[Char]): Option[Int] = {
       lst match {
-        case Nil => None
         case head :: Nil if (head === 'F' || head === 'L') =>
           currentRange.low.some
         case head :: Nil if (head === 'B' || head === 'R') =>
@@ -46,6 +45,7 @@ object Day5 extends IOApp {
           rangeIterate(currentRange.pickLowerHalf, next)
         case head :: next if (head === 'B' || head === 'R') =>
           rangeIterate(currentRange.pickUpperHalf, next)
+        case _ => None
       }
     }
 

@@ -71,7 +71,7 @@ object LibraryDependencies {
 
   object Compiler {
     val kindProjector =
-      ("org.typelevel" %% "kind-projector" % "0.11.0").cross(CrossVersion.full)
+      ("org.typelevel" %% "kind-projector" % "0.11.2").cross(CrossVersion.full)
     val contextApplied = "org.augustjune" %% "context-applied" % "0.1.4"
   }
 
