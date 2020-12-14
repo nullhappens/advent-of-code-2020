@@ -11,11 +11,12 @@ object Day9 extends IOApp {
   def testList(lst: List[Long], value: Long): Option[(Long, Long)] = {
     (0 until lst.length).toList.flatMap { i =>
       (1 until lst.length).toList.flatMap { j =>
-        val slice = lst.slice(i, j).sorted
+        val slice = lst.slice(i, j)
         if (slice.sum === value && slice.length > 1) {
+          val sorted = slice.sorted
           for {
-            h <- slice.headOption
-            l <- slice.lastOption
+            h <- sorted.headOption
+            l <- sorted.lastOption
           } yield ((h, l))
         } else None
       }
