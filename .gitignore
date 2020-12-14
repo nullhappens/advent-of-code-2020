@@ -6,3 +6,4 @@ docker/image/lib
 .bloop
 project/**/metals.sbt
 .bsp/
+**.worksheet.sc

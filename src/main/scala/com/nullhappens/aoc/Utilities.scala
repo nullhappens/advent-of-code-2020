@@ -21,4 +21,7 @@ object Utilities {
 
   def parseInt(s: String): Option[Int] =
     Either.catchNonFatal(Integer.parseInt(s)).toOption
+
+  def parseLong(s: String): Option[Long] =
+    Either.catchNonFatal(java.lang.Long.parseLong(s)).toOption
 }
